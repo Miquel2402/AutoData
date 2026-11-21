@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Galería visual de coches para el proyecto AutoData.">
+  <title>Galería de coches | AutoData</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.5; margin: 2rem; color: #222; }
+    header, footer { padding: 1rem 0; }
+    h1, h2 { color: #17365d; }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 1.25rem; }
+    figure { margin: 0; border: 1px solid #ccc; border-radius: .5rem; overflow: hidden; }
+    figure img { display: block; width: 100%; height: auto; }
+    figcaption { padding: .8rem; }
+    a:focus { outline: 3px solid #e58b00; outline-offset: 3px; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Galería de coches de AutoData",
+    "description": "Galería de imágenes para acompañar las fichas y comparativas de vehículos de AutoData.",
+    "inLanguage": "es",
+    "author": {
+      "@type": "Organization",
+      "name": "AutoData"
+    },
+    "image": [
+      "https://example.com/assets/images/coche-1-1920w.jpg",
+      "https://example.com/assets/images/coche-2-1920w.jpg",
+      "https://example.com/assets/images/coche-3-1920w.jpg"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>AutoData</h1>
+    <p>Galería de imágenes de vehículos.</p>
+  </header>
+
+  <main>
+    <h2>Modelos destacados</h2>
+    <p>Las rutas de las imágenes son nombres de ejemplo. Sustitúyelas por tus archivos reales y actualiza las URL del JSON-LD antes de entregar.</p>
+    <section class="gallery" aria-label="Galería de coches">
+      <figure>
+        <picture>
+          <source media="(max-width: 480px)" srcset="../assets/images/coche-1-480w.jpg">
+          <source media="(max-width: 768px)" srcset="../assets/images/coche-1-768w.jpg">
+          <img src="../assets/images/coche-1-1920w.jpg"
+               srcset="../assets/images/coche-1-768w.jpg 768w, ../assets/images/coche-1-1920w.jpg 1920w"
+               sizes="(max-width: 480px) 100vw, (max-width: 768px) 100vw, 50vw"
+               alt="Vista exterior de un coche compacto de color gris en una carretera"
+               width="1920" height="1440" loading="lazy">
+        </picture>
+        <figcaption><strong>Coche compacto</strong> — ejemplo de vehículo urbano.</figcaption>
+      </figure>
+      <figure>
+        <picture>
+          <source media="(max-width: 480px)" srcset="../assets/images/coche-2-480w.jpg">
+          <source media="(max-width: 768px)" srcset="../assets/images/coche-2-768w.jpg">
+          <img src="../assets/images/coche-2-1920w.jpg"
+               srcset="../assets/images/coche-2-768w.jpg 768w, ../assets/images/coche-2-1920w.jpg 1920w"
+               sizes="(max-width: 480px) 100vw, (max-width: 768px) 100vw, 50vw"
+               alt="Vista lateral de una berlina moderna aparcada en el exterior"
+               width="1920" height="1440" loading="lazy">
+        </picture>
+        <figcaption><strong>Berlina</strong> — ejemplo de coche para viajes.</figcaption>
+      </figure>
+      <figure>
+        <picture>
+          <source media="(max-width: 480px)" srcset="../assets/images/coche-3-480w.jpg">
+          <source media="(max-width: 768px)" srcset="../assets/images/coche-3-768w.jpg">
+          <img src="../assets/images/coche-3-1920w.jpg"
+               srcset="../assets/images/coche-3-768w.jpg 768w, ../assets/images/coche-3-1920w.jpg 1920w"
+               sizes="(max-width: 480px) 100vw, (max-width: 768px) 100vw, 50vw"
+               alt="Vista frontal de un vehículo deportivo de color oscuro"
+               width="1920" height="1440" loading="lazy">
+        </picture>
+        <figcaption><strong>Deportivo</strong> — ejemplo de coche de altas prestaciones.</figcaption>
+      </figure>
+    </section>
+  </main>
+
+  <footer>
+    <p>AutoData · Comprueba siempre la fuente y la licencia de cada imagen utilizada.</p>
+  </footer>
+</body>
+</html>

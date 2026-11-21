@@ -1,0 +1,8 @@
+AUTODATA — NOTAS PARA TERMINAR LA ENTREGA
+
+1. Abre index.html en el navegador y comprueba todas las páginas y enlaces.
+2. Haz capturas reales y guárdalas en evidencies/.
+3. Si el profesor exige imágenes reales, descárgalas de una fuente con permiso de uso, guárdalas en imagenes/ y añade el atributo alt.
+4. Completa potencia, consumo y precio solo cuando hayas elegido año y versión concretos y consultado fuentes fiables.
+5. El diseño CSS está incluido como mejora visual; el objetivo principal de la quincena es demostrar HTML semántico y navegación.
+6. Debes poder explicar el código y modificarlo tú mismo.

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Galería visual de coches para el proyecto AutoData.">
+  <title>Galería de coches | AutoData</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.5; margin: 2rem; color: #222; }
+    header, footer { padding: 1rem 0; }
+    h1, h2 { color: #17365d; }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 1.25rem; }
+    figure { margin: 0; border: 1px solid #ccc; border-radius: .5rem; overflow: hidden; }
+    figure img { display: block; width: 100%; height: auto; }
+    figcaption { padding: .8rem; }
+    a:focus { outline: 3px solid #e58b00; outline-offset: 3px; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Galería de coches de AutoData",
+    "description": "Galería visual de tres modelos de vehículos: Toyota Corolla, SEAT León y Volkswagen Golf.",
+    "inLanguage": "es",
+    "author": {
+      "@type": "Organization",
+      "name": "AutoData"
+    },
+    "image": [
+      "https://example.com/assets/images/toyota-corolla-1920.jpg",
+      "https://example.com/assets/images/seat-leon-1920.jpg",
+      "https://example.com/assets/images/volkswagen-golf-1920.jpg"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>AutoData</h1>
+    <p>Galería de imágenes de vehículos.</p>
+  </header>
+
+  <main>
+    <h2>Modelos destacados</h2>
+    <section class="gallery" aria-label="Galería de coches">
+      <figure>
+        <picture>
+          <source media="(max-width: 480px)" srcset="../assets/images/toyota-corolla-480.jpg">
+          <source media="(max-width: 768px)" srcset="../assets/images/toyota-corolla-768.jpg">
+          <img src="../assets/images/toyota-corolla-1920.jpg"
+               srcset="../assets/images/toyota-corolla-768.jpg 768w, ../assets/images/toyota-corolla-1920.jpg 1920w"
+               sizes="(max-width: 480px) 100vw, (max-width: 768px) 100vw, 50vw"
+               alt="Vista exterior de un Toyota Corolla"
+               width="1920" height="1440" loading="lazy">
+        </picture>
+        <figcaption><strong>Toyota Corolla</strong> — modelo destacado de AutoData.</figcaption>
+      </figure>
+      <figure>
+        <picture>
+          <source media="(max-width: 480px)" srcset="../assets/images/seat-leon-480.jpg">
+          <source media="(max-width: 768px)" srcset="../assets/images/seat-leon-768.jpg">
+          <img src="../assets/images/seat-leon-1920.jpg"
+               srcset="../assets/images/seat-leon-768.jpg 768w, ../assets/images/seat-leon-1920.jpg 1920w"
+               sizes="(max-width: 480px) 100vw, (max-width: 768px) 100vw, 50vw"
+               alt="Vista exterior de un SEAT León"
+               width="1920" height="1440" loading="lazy">
+        </picture>
+        <figcaption><strong>SEAT León</strong> — modelo destacado de AutoData.</figcaption>
+      </figure>
+      <figure>
+        <picture>
+          <source media="(max-width: 480px)" srcset="../assets/images/volkswagen-golf-480.jpg">
+          <source media="(max-width: 768px)" srcset="../assets/images/volkswagen-golf-768.jpg">
+          <img src="../assets/images/volkswagen-golf-1920.jpg"
+               srcset="../assets/images/volkswagen-golf-768.jpg 768w, ../assets/images/volkswagen-golf-1920.jpg 1920w"
+               sizes="(max-width: 480px) 100vw, (max-width: 768px) 100vw, 50vw"
+               alt="Vista exterior de un Volkswagen Golf"
+               width="1920" height="1440" loading="lazy">
+        </picture>
+        <figcaption><strong>Volkswagen Golf</strong> — modelo destacado de AutoData.</figcaption>
+      </figure>
+    </section>
+  </main>
+
+  <footer>
+    <p>AutoData · Galería de algunos coches de nuestra página web.</p>
+  </footer>
+</body>
+</html>

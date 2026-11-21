@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "marca": "Toyota",
+    "modelo": "Corolla",
+    "motor": "1.8 Hybrid",
+    "potencia": "140 CV",
+    "consumo": "4,5 l/100 km",
+    "combustible": "Híbrido",
+    "transmision": "Automática",
+    "precio": "30.000 €",
+    "descripcion": "Modelo eficiente y fiable, muy popular por su consumo y comodidad."
+  },
+  {
+    "id": 2,
+    "marca": "Ford",
+    "modelo": "Focus",
+    "motor": "1.0 EcoBoost",
+    "potencia": "125 CV",
+    "consumo": "5,8 l/100 km",
+    "combustible": "Gasolina",
+    "transmision": "Manual",
+    "precio": "23.000 €",
+    "descripcion": "Coche compacto con buen equilibrio entre consumo y dinamismo."
+  },
+  {
+    "id": 3,
+    "marca": "SEAT",
+    "modelo": "León",
+    "motor": "2.0 TDI",
+    "potencia": "150 CV",
+    "consumo": "4,9 l/100 km",
+    "combustible": "Diésel",
+    "transmision": "Manual",
+    "precio": "28.000 €",
+    "descripcion": "Versátil, práctico y pensado para recorridos diarios y viajes."
+  }
+]

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoData | Inicio</title>
+  <meta name="description" content="AutoData reúne información clara sobre marcas y modelos de coches para comparar sus principales características." />
+  <meta property="og:title" content="AutoData" />
+  <meta property="og:description" content="Consulta fichas y compara coches con datos claros y accesibles." />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="css/estilos.css" />
+  <script defer src="js/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="Ir a la página de inicio">
+        <span class="brand-mark">A</span>
+        <span>AutoData</span>
+      </a>
+
+      <nav aria-label="Menú principal" class="main-nav">
+        <button class="menu-toggle" aria-expanded="false" aria-controls="menu-principal">
+          Menú
+        </button>
+        <ul id="menu-principal">
+          <li><a href="index.html" aria-current="page">Inicio</a></li>
+          <li><a href="marcas.html">Marcas</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="comparador.html">Comparador</a></li>
+          <li><a href="guia.html">Guía</a></li>
+          <li><a href="novedades.html">Novedades</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Datos claros para elegir mejor</p>
+          <h1>Encuentra el coche adecuado sin perderte en datos inútiles</h1>
+          <p class="lead">
+            AutoData reúne la información principal de marcas y modelos para comparar motor,
+            consumo, combustible, potencia y precio de forma clara.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="catalogo.html">Ver catálogo</a>
+            <a class="btn btn-secondary" href="comparador.html">Comparar coches</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h2>Modelos destacados</h2>
+          <ul class="mini-list">
+            <li><strong>Toyota Corolla</strong> · híbrido</li>
+            <li><strong>Ford Focus</strong> · gasolina</li>
+            <li><strong>SEAT León</strong> · diésel</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Catálogo</p>
+          <h2>Explora coches por marca o modelo</h2>
+        </div>
+
+        <div class="cards-grid cards-grid-3" id="featured-cars">
+          <!-- Se rellenan dinámicamente desde JS -->
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt-bg">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Comparador</p>
+          <h2>Compara dos vehículos en segundos</h2>
+        </div>
+
+        <div class="compare-preview">
+          <div class="compare-box">
+            <h3>Motor</h3>
+            <p>1.8 híbrido</p>
+          </div>
+          <div class="compare-box">
+            <h3>Consumo</h3>
+            <p>4,5 l/100 km</p>
+          </div>
+          <div class="compare-box">
+            <h3>Precio</h3>
+            <p>30.000 €</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">¿Qué encontrarás?</p>
+          <h2>Información útil y organizada</h2>
+        </div>
+
+        <div class="features-grid">
+          <article class="feature">
+            <h3>Ficha técnica</h3>
+            <p>Marca, modelo, motor, potencia, consumo, combustible y precio orientativo.</p>
+          </article>
+          <article class="feature">
+            <h3>Comparador</h3>
+            <p>Visualiza las diferencias entre varios coches en una misma tabla.</p>
+          </article>
+          <article class="feature">
+            <h3>Guía rápida</h3>
+            <p>Aprende conceptos básicos del motor y de la compra de un vehículo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>AutoData</h3>
+        <p>Proyecto académico para consultar información de coches de forma clara y ordenada.</p>
+      </div>
+      <div>
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="marcas.html">Marcas</a></li>
+          <li><a href="comparador.html">Comparador</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Información</h4>
+        <ul>
+          <li><a href="guia.html">Guía</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Autor</h4>
+        <p>Miquel Santos Bay</p>
+        <p>Última actualización: 2026</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

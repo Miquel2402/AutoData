@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Comparativa de características de varios coches en AutoData.">
+  <title>Comparativa de coches | AutoData</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.5; margin: 2rem; color: #222; }
+    h1 { color: #17365d; }
+    .table-wrap { overflow-x: auto; }
+    table { border-collapse: collapse; width: 100%; min-width: 720px; }
+    caption { font-weight: bold; text-align: left; padding: .75rem 0; }
+    th, td { border: 1px solid #999; padding: .7rem; text-align: left; }
+    thead th { background: #17365d; color: white; }
+    tbody th { background: #eaf0f7; }
+    tfoot th, tfoot td { background: #eee; font-weight: bold; }
+    a:focus, button:focus, input:focus, select:focus { outline: 3px solid #e58b00; outline-offset: 3px; }
+    .note { font-size: .95rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>AutoData</h1>
+    <p>Comparativa de características técnicas de tres modelos de coche.</p>
+  </header>
+
+  <main>
+    <h2>Comparativa de modelos</h2>
+    <p class="note">Los datos de esta tabla son ejemplos orientativos para la práctica, no una ficha técnica oficial.</p>
+    <div class="table-wrap">
+      <table>
+        <caption>Características de modelos seleccionados</caption>
+        <thead>
+          <tr>
+            <th scope="col">Marca y modelo</th>
+            <th scope="col">Combustible</th>
+            <th scope="col">Potencia (CV)</th>
+            <th scope="col">Consumo (l/100 km)</th>
+            <th scope="col">Precio orientativo (€)</th>
+            <th scope="col">Variación (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Toyota Corolla</th>
+            <td>Híbrido</td>
+            <td>140</td>
+            <td>4,5</td>
+            <td>27.000</td>
+            <td>No disponible</td>
+          </tr>
+          <tr>
+            <th scope="row">SEAT León</th>
+            <td>Gasolina</td>
+            <td>130</td>
+            <td>5,7</td>
+            <td>26.000</td>
+            <td>No disponible</td>
+          </tr>
+          <tr>
+            <th scope="row">Volkswagen Golf</th>
+            <td>Gasolina</td>
+            <td>150</td>
+            <td>5,6</td>
+            <td>30.000</td>
+            <td>No disponible</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    <p>AutoData · Información organizada para facilitar la comparación de vehículos.</p>
+  </footer>
+</body>
+</html>

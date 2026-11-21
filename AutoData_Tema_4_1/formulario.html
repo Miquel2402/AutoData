@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Formulario de registro de usuarios de AutoData.">
+  <title>Registro | AutoData</title>
+  <style>
+    :root {font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#182333;background:#f1f5f9}
+    *{box-sizing:border-box}body{margin:0}header{background:#12263f;color:white;padding:1.25rem max(1rem,calc((100% - 960px)/2))}header a{color:white;text-decoration:none;font-weight:800;font-size:1.5rem}header p{margin:.25rem 0 0;color:#d9e6f5}main{max-width:680px;margin:2.5rem auto;padding:0 1rem}form{background:white;padding:2rem;border-radius:16px;box-shadow:0 8px 30px #152c4514}h1{font-size:1.8rem;margin-top:0}fieldset{border:0;padding:0;margin:1.5rem 0}legend{font-weight:700;font-size:1.1rem;margin-bottom:1rem}.campo{margin:0 0 1.3rem}label{display:block;font-weight:650;margin-bottom:.4rem}input{width:100%;padding:.8rem;border:1px solid #8291a3;border-radius:8px;font:inherit}input:focus-visible,button:focus-visible{outline:3px solid #2669ba;outline-offset:2px}.ayuda{font-size:.86rem;color:#44566c;margin:.35rem 0}.error{font-size:.9rem;color:#a21b24;margin:.4rem 0 0;min-height:1.1em}input[aria-invalid="true"]{border:2px solid #b4232b;background:#fff9f9}.botones{display:flex;gap:.8rem;flex-wrap:wrap}button{padding:.8rem 1.4rem;border-radius:8px;border:0;font:inherit;font-weight:700;cursor:pointer}button[type=submit]{background:#1458a3;color:white}button[type=reset]{background:#e5ebf2;color:#172638}#resultado{margin-top:1.2rem;padding:.9rem;border-radius:8px}#resultado:empty{display:none}#resultado.ok{background:#e6f4ec;color:#14532d}#resultado.mal{background:#fce8e8;color:#8d1c1c}footer{text-align:center;color:#54647a;padding:1.5rem;font-size:.85rem}@media(max-width:480px){form{padding:1.2rem}main{margin:1rem auto}}
+  </style>
+</head>
+<body>
+  <header><a href="formulario.html">AutoData</a><p>Información y comparativas de vehículos</p></header>
+  <main>
+    <form id="registro" action="#" method="post" novalidate>
+      <h1>Crear una cuenta</h1>
+      <p>Regístrate para guardar tus modelos favoritos y consultar comparativas. Los campos marcados con * son obligatorios.</p>
+      <fieldset>
+        <legend>Datos personales</legend>
+        <div class="campo">
+          <label for="email">Correo electrónico *</label>
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="usuario@ejemplo.com" required aria-describedby="ayuda-email error-email">
+          <p class="ayuda" id="ayuda-email">Introduce una dirección de correo válida.</p><p class="error" id="error-email" aria-live="polite"></p>
+        </div>
+        <div class="campo">
+          <label for="telefono">Teléfono *</label>
+          <input id="telefono" name="telefono" type="tel" inputmode="tel" autocomplete="tel" placeholder="+34 666 777 888" pattern="\+34 [0-9]{3} [0-9]{3} [0-9]{3}" required aria-describedby="ayuda-telefono error-telefono">
+          <p class="ayuda" id="ayuda-telefono">Formato obligatorio: +34 666 777 888.</p><p class="error" id="error-telefono" aria-live="polite"></p>
+        </div>
+        <div class="campo">
+          <label for="fecha">Fecha de nacimiento *</label>
+          <input id="fecha" name="fecha" type="date" required aria-describedby="ayuda-fecha error-fecha">
+          <p class="ayuda" id="ayuda-fecha">Debes tener al menos 18 años.</p><p class="error" id="error-fecha" aria-live="polite"></p>
+        </div>
+        <div class="campo">
+          <label for="contrasena">Contraseña *</label>
+          <input id="contrasena" name="contrasena" type="password" autocomplete="new-password" minlength="8" required aria-describedby="ayuda-contrasena error-contrasena">
+          <p class="ayuda" id="ayuda-contrasena">Utiliza un mínimo de 8 caracteres.</p><p class="error" id="error-contrasena" aria-live="polite"></p>
+        </div>
+      </fieldset>
+      <div class="botones"><button type="submit">Enviar</button><button type="reset">Limpiar</button></div>
+      <div id="resultado" role="status" aria-live="polite"></div>
+    </form>
+  </main>
+  <footer>AutoData · Formulario de registro</footer>
+  <script>
+    'use strict';
+    const formulario = document.querySelector('#registro');
+    const resultado = document.querySelector('#resultado');
+    const campos = [...formulario.querySelectorAll('input')];
+    const fecha = document.querySelector('#fecha');
+    function fechaLimite() {
+      const hoy = new Date();
+      const limite = new Date(hoy.getFullYear() - 18, hoy.getMonth(), hoy.getDate(), 12);
+      // Si el día no existe en el año de destino (29 de febrero), se ajusta al 28.
+      if (limite.getMonth() !== hoy.getMonth()) limite.setDate(0);
+      return `${limite.getFullYear()}-${String(limite.getMonth()+1).padStart(2,'0')}-${String(limite.getDate()).padStart(2,'0')}`;
+    }
+    fecha.max = fechaLimite();
+    function mensajeError(campo) {
+      const v = campo.validity;
+      if (v.valueMissing) return 'Este campo es obligatorio.';
+      if (campo.id === 'email' && v.typeMismatch) return 'Introduce un correo electrónico válido.';
+      if (campo.id === 'telefono' && v.patternMismatch) return 'Escribe el teléfono con el formato +34 666 777 888.';
+      if (campo.id === 'fecha') {
+        if (v.badInput) return 'Selecciona una fecha válida.';
+        if (v.rangeOverflow || campo.value > fechaLimite()) return 'Debes tener al menos 18 años; no se permiten fechas futuras.';
+      }
+      if (campo.id === 'contrasena' && (v.tooShort || campo.value.length < 8)) return 'La contraseña debe tener al menos 8 caracteres.';
+      return '';
+    }
+    function validar(campo) {
+      if (campo.id === 'fecha') fecha.max = fechaLimite();
+      const error = mensajeError(campo);
+      document.querySelector(`#error-${campo.id}`).textContent = error;
+      campo.setAttribute('aria-invalid', error ? 'true' : 'false');
+      return !error;
+    }
+    campos.forEach(campo => {
+      campo.addEventListener('blur', () => validar(campo));
+      campo.addEventListener('input', () => {
+        if (campo.getAttribute('aria-invalid') === 'true') validar(campo);
+        resultado.textContent = ''; resultado.className = '';
+      });
+      campo.addEventListener('change', () => validar(campo));
+    });
+    formulario.addEventListener('submit', evento => {
+      evento.preventDefault();
+      const correctos = campos.map(validar);
+      if (correctos.every(Boolean)) {
+        resultado.className = 'ok';
+        resultado.textContent = 'Los datos cumplen las validaciones del navegador. Este formulario es una demostración y no envía ni guarda información.';
+      } else {
+        resultado.className = 'mal';
+        resultado.textContent = 'Revisa los campos señalados antes de continuar.';
+        campos[correctos.indexOf(false)].focus();
+      }
+    });
+    formulario.addEventListener('reset', () => {
+      campos.forEach(campo => {campo.removeAttribute('aria-invalid');document.querySelector(`#error-${campo.id}`).textContent = '';});
+      resultado.textContent = ''; resultado.className = '';
+    });
+  </script>
+</body>
+</html>
