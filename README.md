@@ -1,4 +1,5 @@
 # AutoData
+<<<<<<< HEAD
 
 **Autor:** Miquel Santos Bay  
 **Asignatura:** LMSGI · 0373 · ASIX semipresencial  
@@ -84,3 +85,6 @@ Esta versión incluye la página de inicio, el catálogo, tres fichas de ejemplo
 ## 11. Autor
 
 Miquel Santos Bay
+=======
+Proyecto web AutoData de LMSGI. Incluye catálogo de coches, tablas, galería multimedia y formulario.
+>>>>>>> origin/main
